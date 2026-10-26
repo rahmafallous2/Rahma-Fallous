@@ -135,6 +135,28 @@ html{scroll-behavior:smooth;scroll-padding-top:72px}
 .quiet *,.quiet *::before{animation:none!important}.quiet .rv{opacity:1;translate:0 0;transition:none}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before{animation:none!important}.rv{opacity:1!important;translate:none!important}}
 
+
+html,body{overflow-x:hidden}img,video{max-width:100%}
+@media(max-width:900px){
+.hero::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(0,0,0,.8) 56%,#000 68%)}
+.hero{min-height:1040px}.cut{bottom:auto;top:130px;height:auto;width:min(100%,520px);left:50%;transform:none;translate:-50% 0!important;animation:none}.bigname{top:20px}
+.hcopy h1{font-size:clamp(48px,15vw,76px)}.hcopy p{max-width:none}
+.hcopy .hb .btn{flex:1 1 auto;justify-content:center}
+}
+@media(max-width:620px){
+.w{padding:0 18px}.sec{padding:44px 0}
+.sh{flex-wrap:wrap;gap:8px 16px}.sh i{display:none}.sh h2{white-space:normal}
+.pg{padding-top:clamp(70px,20vw,120px);padding-bottom:28px}.pg::before{left:18px}
+.item{padding:28px 0;gap:20px}.item h2{font-size:clamp(26px,8vw,36px)}
+.cs{padding:22px 0}.cs h3{margin-bottom:4px}
+.panel>div{padding:22px}.row{padding:16px 0}
+.ct div{padding:14px 0}.ct input{max-width:none}
+.gal{grid-template-columns:repeat(2,1fr);gap:10px}
+footer .w{flex-direction:column}
+.btn{min-height:44px}
+.cr .n{font-size:28px}
+}
+@media(max-width:380px){.gal{grid-template-columns:1fr}.nav ul a{font-size:10px}}
 .ph.wide{aspect-ratio:16/9}.ph.wide video{object-fit:contain;background:#000}
 .ph .em{background:linear-gradient(135deg,#2a0507,#141415);width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px}
 .ph .em b{font:clamp(26px,3vw,40px)/1 var(--hd);color:var(--red);text-transform:uppercase}.ph .em span{font-size:12px;letter-spacing:.12em;text-transform:uppercase}
@@ -188,7 +210,7 @@ function slot(key,cls,label,gal,th){var v=M[key];if(gal)v=null;var i=+key.slice(
  return '<div class="ph '+cls+'">'+inner+(ED?'<button class="btn sm up f" data-up="'+key+'">Upload</button>':'')+'</div>'}
 function N(i){return '0'+(i+1)}
 function card(i){var p=P[i];return '<a class="card" href="#work-'+(i+1)+'">'+slot('c'+(i+1),'','Screenshots coming soon',0,1)+'<div class="cr"><span class="n">'+N(i)+'</span><div><b>'+p.t+'</b><small>'+p.c+'</small></div><span class="ar red">→</span></div></a>'}
-function home(){var h='<section class="hero"><div class="bigname" aria-hidden="true">RAHMA</div><img class="cut" src="'+CUT+'" alt="Portrait of Rahma Fallous"><div class="hmain w"><div class="hcopy"><div class="hi">Hello, I’m</div><h1>Rahma<br>Fallous</h1><div class="role">AI software engineer</div><p>I build clean web applications and turn ideas into real solutions. Focused on backend, APIs, applied AI and meaningful impact.</p><div class="hb"><a class="btn f" href="#work">Explore selected work →</a><a class="btn" href="#contact">Get in touch</a></div></div><div></div><div class="hside"><div class="tur"><span class="plus" aria-hidden="true">+</span><p>Turning ideas into powerful digital experiences.</p></div><div class="stats"><div class="stat"><b>2026</b><span>BSc Computer<br>Science</span></div><div class="stat"><b>6</b><span>Selected<br>projects</span></div><div class="stat"><b>2</b><span>Professional<br>roles</span></div></div></div></div><a class="scr" href="#sel"><span class="plus" aria-hidden="true">↓</span>Scroll to explore</a></section>';
+function home(){var h='<section class="hero"><div class="bigname" aria-hidden="true">RAHMA</div><img class="cut" src="'+CUT+'" alt="Portrait of Rahma Fallous"><div class="hmain w"><div class="hcopy"><div class="hi">Hello, I’m</div><h1>Rahma<br>Fallous</h1><div class="role">Backend / Full-stack<br>software engineer</div><p>I build clean web applications and turn ideas into real solutions. Focused on backend, APIs, applied AI and meaningful impact.</p><div class="hb"><a class="btn f" href="#work">Explore selected work →</a><a class="btn" href="#contact">Get in touch</a></div></div><div></div><div class="hside"><div class="tur"><span class="plus" aria-hidden="true">+</span><p>Turning ideas into powerful digital experiences.</p></div><div class="stats"><div class="stat"><b>2026</b><span>BSc Computer<br>Science</span></div><div class="stat"><b>6</b><span>Selected<br>projects</span></div><div class="stat"><b>2</b><span>Professional<br>roles</span></div></div></div></div><a class="scr" href="#sel"><span class="plus" aria-hidden="true">↓</span>Scroll to explore</a></section>';
  h+='<section class="sec" id="sel"><div class="w"><div class="sh"><h2>Selected projects</h2><i></i><a class="lbl" href="#work">View all →</a></div><div class="grid3">'+card(0)+card(1)+card(2)+'</div></div></section>';
  h+='<section class="sec"><div class="w"><div class="panel"><div><h3>Education &amp; skills</h3><p style="margin-bottom:6px"><b>BSc Computer Science</b><br><span class="mu">Rafik Hariri University · May 2026</span></p><div class="chips" style="margin-top:16px"><span>Java</span><span>Python</span><span>PHP</span><span>JavaScript</span><span>C++</span><span>Kotlin</span><span>Spring Boot</span><span>Laravel</span><span>React</span><span>SQL</span><span>Pandas</span><span>Scikit-learn</span><span>Git</span><span>REST APIs</span></div></div>'+
 '<div><h3>How I work</h3><div class="step"><b>01</b><div><strong>Understand</strong>Clarify the problem, users and constraints.</div></div><div class="step"><b>02</b><div><strong>Plan</strong>Break it into small, testable pieces.</div></div><div class="step"><b>03</b><div><strong>Build</strong>Implement clean, readable code.</div></div><div class="step"><b>04</b><div><strong>Test</strong>Debug and verify before moving on.</div></div><div class="step"><b>05</b><div><strong>Reflect</strong>Document what worked and what to improve.</div></div></div>'+
